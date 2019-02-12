@@ -65,6 +65,7 @@ Insert the Cornell seal image with:
   2. A URL (https://raw.githubusercontent.com/AguaClara/aguaclara_tutorial/master/Images/Cornell_University_seal.svg.png)
 
 ![Photo1](http://aguaclara.cornell.edu/images/logo.png)
+![Photo2](https://raw.githubusercontent.com/AguaClara/aguaclara_tutorial/master/Images/Cornell_University_seal.svg.png)
 
 *The Cornell one was giving me a 404 error so I used this one*
 
