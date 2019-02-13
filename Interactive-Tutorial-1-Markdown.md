@@ -46,7 +46,7 @@ Make an ordered list of 3 things you hope to achieve this semester, and elaborat
    3. Check Deadlines
 3. Calm down a bit
    1. Stop worrying about everything
-   2. Do my work actually on time
+   2. Do my work actually on time!
    
   + CHEM 2080
   + BIOMG 1350
