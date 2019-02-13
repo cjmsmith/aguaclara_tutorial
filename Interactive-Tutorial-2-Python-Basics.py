@@ -28,7 +28,7 @@ start_recording()
 
 # TODO 1: Write Monroe's favorite food in a string.
 #
-# Hint: It's rice and beans. Yum, string beans.
+# Hint: It's rice and beans. Yum, string beans...
 
 favorite_food = 'rice and beans'  # Your answer here
 
