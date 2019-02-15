@@ -90,7 +90,7 @@ Fivebyfive = np.array([[5,10,15,20,25],[4,6,8,12,16],[3,6,9,12,15],[8,16,24,32,4
 Fivebyfive[3,:]
 Fivebyfive[:,3]
 
-# extracts row and column?
+# extracts row and column
 
 len(Fivebyfive)
 len(Fivebyfive[1])
@@ -117,10 +117,11 @@ kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can us
 # Write your code here
 def diffusion_coeficient(T,n,r):
   T = T*u.kelvin
-  n = n* u.kilogram / (u.m * u.second)
+  eta = eta *u.kilogram / (u.m * u.second)
   r = r*u.m
   return ((kB*T)/(6*math.pi*n*r))
-diffusion_coeficient(273,9,3)
+  
+diffusion_coeficient(300,1,0.1)
 ```
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save you plot to your images folder in your personal repository, and display it below using `plt.show()` and a relative file path to the image.
@@ -130,14 +131,14 @@ diffusion_coeficient(273,9,3)
 from aguaclara.play import *
 from aide_design.play import*
 import math
-Temp_Array = np.array(np.linspace(273,473,200))
-Vis_Array = pc.viscosity_kinematic(Temp_Array)
-Area = math.pi*0.04
-Rey_Array = pc.re_pipe(Area/2,0.4,Vis_Array)
+TempArray = np.array(np.linspace(300,400,500))
+VArray = pc.viscosity_kinematic(TempArray)
+A = math.pi*0.2*0.2
+ReynoldsArray = pc.re_pipe(A/2,0.4,VArray)
 
 #Graph it!
 
-plt.plot(Temp_Array,Rey_Array)
+plt.plot(TempArray,ReynoldsArray)
 plt.xlabel('Temperature(K)')
 plt.ylabel('Reynolds Number')
 plt.title('Tempurature Vs. Reynolds Number')
