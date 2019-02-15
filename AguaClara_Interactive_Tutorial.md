@@ -49,11 +49,11 @@ else:
 2. Write a `for` loop that takes a variable with an initial value of 0, and adds the current index to the previous value of that variable (i.e. you variable should grow in size every iteration). Perform the iteration 20 times, and have the final value be printed at the end.
 
 ```Python
-x = 0
-for x in range(20):
-  x+=1
+j = 0
+for j in range(20):
+  j+=1
 
-print (x)
+print (j)
 ```
 
 
@@ -63,7 +63,7 @@ print (x)
 ```Python
 import NumPy
 from aide_design.play import*
-m = np.sin(4)
+x = np.sin(4)
 y = ut.sig(m,2)
 
 print(y)
@@ -87,8 +87,8 @@ array*u.m
 # adds units of meters
 
 Fivebyfive = np.array([[5,10,15,20,25],[4,6,8,12,16],[3,6,9,12,15],[8,16,24,32,40],[1,1,1,1,1]])
-Fivebyfive[2,:]
-Fivebyfive[:,2]
+Fivebyfive[3,:]
+Fivebyfive[:,3]
 
 # extracts row and column?
 
@@ -110,7 +110,7 @@ $$ D = \frac{k_BT}{6\pi\eta r} $$
 
 ```python
 import math
-from scipy.constants import Boltzmann as kB_sc # I've imported the unitless value for kB from SciPy
+from scipy.constants import Boltzmann as kB_sc 
 
 kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
 
@@ -125,7 +125,7 @@ diffusion_coeficient(273,9,3)
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save you plot to your images folder in your personal repository, and display it below using `plt.show()` and a relative file path to the image.
 
-<!--- Fill you answer here. --->
+
 ```Python
 from aguaclara.play import *
 from aide_design.play import*
@@ -134,6 +134,8 @@ Temp_Array = np.array(np.linspace(273,473,200))
 Vis_Array = pc.viscosity_kinematic(Temp_Array)
 Area = math.pi*0.04
 Rey_Array = pc.re_pipe(Area/2,0.4,Vis_Array)
+
+#Graph it!
 
 plt.plot(Temp_Array,Rey_Array)
 plt.xlabel('Temperature(K)')
